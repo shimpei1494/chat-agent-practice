@@ -1,21 +1,55 @@
-// frontend/src/App.tsx
-import { useState, useEffect } from 'react';
+import { useState } from "react";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import ChatMode from "./page/chat/chat";
+// import SettingsMode from './components/SettingsMode';
+// import HistoryMode from './components/HistoryMode';
 
 function App() {
-  const [message, setMessage] = useState("");
+    const [currentMode, setCurrentMode] = useState("chat");
 
-  useEffect(() => {
-    fetch("/api/hello")
-      .then((response) => response.json())
-      .then((data) => setMessage(data.message));
-  }, []);
+    return (
+        <Router>
+            <div className="app-container">
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/" onClick={() => setCurrentMode("chat")}>
+                                チャット
+                            </Link>
+                        </li>{" "}
+                        <li>
+                            <Link
+                                to="/settings"
+                                onClick={() => setCurrentMode("settings")}
+                            >
+                                設定
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/history"
+                                onClick={() => setCurrentMode("history")}
+                            >
+                                履歴
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
 
-  return (
-    <div>
-      <h1>{message}</h1>
-    </div>
-  );
+                <main>
+                    <Routes>
+                        <Route path="/" element={<ChatMode />} />
+                        {/* <Route path="/settings" element={<SettingsMode />} />
+            <Route path="/history" element={<HistoryMode />} /> */}
+                    </Routes>
+                </main>
+
+                <footer>
+                    <p>現在のモード: {currentMode}</p>
+                </footer>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
-
