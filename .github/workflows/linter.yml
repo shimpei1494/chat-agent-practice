@@ -2,23 +2,16 @@ name: Linter
 
 on:
   pull_request:
-    branches: [develop, main]
-defaults:
-  run:
-    shell: bash
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    branches: [develop]
+
 jobs:
   frontend-lint:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: "20"
-          cache: "npm"
       - name: Install dependencies
         run: |
           cd frontend
@@ -30,13 +23,11 @@ jobs:
 
   backend-lint:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-          cache: "pip"
       - name: Install dependencies
         run: |
           cd backend
