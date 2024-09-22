@@ -1,0 +1,56 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  //////////////
+  // mypyの設定
+  //////////////
+
+  // 設定ファイルの指定
+  // "mypy-type-checker.args": ["--config=backend/pyproject.toml"],
+
+  //////////////
+  // Ruffの設定
+  //////////////
+
+  // refs: https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
+  "[python]": {
+    // デフォルトのformatterにruffを指定
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      // 保存時にimportを整理
+      "source.organizeImports": "explicit"
+    }
+  },
+  // ruffの設定は下記ファイルから読み込み(指定が無い場合でも自動で探索されるが明示しておく)
+  "ruff.format.args": ["--config=backend/pyproject.toml"],
+
+  //////////////
+  // Biomeの設定
+  //////////////
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  //////////////
+  // CSSの設定
+  //////////////
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "files.autoSave": "onFocusChange",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "biome.lspBin": "./frontend/node_modules/@biomejs/biome/bin/biome"
+}

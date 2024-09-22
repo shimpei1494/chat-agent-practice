@@ -1,55 +1,18 @@
-import { useState } from "react";
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import ChatMode from "./page/chat/chat";
-// import SettingsMode from './components/SettingsMode';
-// import HistoryMode from './components/HistoryMode';
+import { HashRouter, Route, Routes } from "react-router-dom";
 
-function App() {
-    const [currentMode, setCurrentMode] = useState("chat");
+import NoPage from "./pages/NoPage";
+import Chat from "./pages/chat/Chat";
+import Layout from "./pages/layout/Layout";
 
+export default function App() {
     return (
-        <Router>
-            <div className="app-container">
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/" onClick={() => setCurrentMode("chat")}>
-                                チャット
-                            </Link>
-                        </li>{" "}
-                        <li>
-                            <Link
-                                to="/settings"
-                                onClick={() => setCurrentMode("settings")}
-                            >
-                                設定
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/history"
-                                onClick={() => setCurrentMode("history")}
-                            >
-                                履歴
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
-
-                <main>
-                    <Routes>
-                        <Route path="/" element={<ChatMode />} />
-                        {/* <Route path="/settings" element={<SettingsMode />} />
-            <Route path="/history" element={<HistoryMode />} /> */}
-                    </Routes>
-                </main>
-
-                <footer>
-                    <p>現在のモード: {currentMode}</p>
-                </footer>
-            </div>
-        </Router>
+        <HashRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Chat />} />
+                    <Route path="*" element={<NoPage />} />
+                </Route>
+            </Routes>
+        </HashRouter>
     );
 }
-
-export default App;
