@@ -71,7 +71,11 @@
    ```bash
    docker compose up --build
    ```
-   → このコマンドの実行に伴い、コンテナ内での npm i が実行される
+   → このコマンドの実行に伴い、コンテナ内での npm ci が実行される  
+   ↓ もしかして volume 内の node_modules が更新されなくてライブラリがアプリに反映されないかも、以下コマンドで volume ごと削除してから docker compose up すれば問題ない気がする（今後改善したい）
+   ```bash
+      docker compose down --volumes
+   ```
 
 ### ローカルと Docker コンテナ内のライブラリの状態を合わせる
 

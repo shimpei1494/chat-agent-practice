@@ -12,6 +12,10 @@
         "check": "biome check --write ."
     },
     "dependencies": {
+        "@fluentui/react": "^8.120.9",
+        "@fluentui/react-icons": "^2.0.258",
+        "@react-spring/web": "^9.7.4",
+        "dompurify": "^3.1.6",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^6.26.1"
