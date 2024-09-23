@@ -4,11 +4,25 @@
 
 このプロジェクトは、React（TypeScript）と Flask を使用したチャットアプリケーションです。フロントエンドは Vite を使用し、バックエンドは Flask で構築されています。
 
-## 必要条件
+## 環境概要
 
 - Node.js (バージョン 20.17.0)
 - Python (バージョン 3.11)
-- git
+- エディタ：Cursor または VScode（リポジトリ作成者は Cursor を使用しているがどちらでも OK）
+  - Cursor：https://www.cursor.com/
+  - VScode：https://azure.microsoft.com/ja-jp/products/visual-studio-code
+
+## ドキュメント
+
+README 以外のドキュメントは docs ディレクトリ内に保存
+
+| ドキュメント名         | 説明                               |
+| ---------------------- | ---------------------------------- |
+| BRANCH_POLICY.md       | ブランチ戦略と運用ルールについて   |
+| CONTRIBUTING.md        | コード修正からマージまでの手順     |
+| TESTING.md             | テスト方法について（今後記載予定） |
+| vscode_extension.md    | VScode の拡張機能の導入について    |
+| USAGE_LINT_FOMATTER.md | Linter・Formatter の使い方         |
 
 ## セットアップ
 
@@ -56,6 +70,18 @@
 
 - `frontend/`: React フロントエンドのコード
 - `backend/`: Flask バックエンドのコード
+
+## バックエンドの.env ファイル作成
+
+`backend/.env.example`ファイルをコピーして`backend/.envファイル`を作成する。  
+.env ファイルに API キーなどの環境変数を定義する（各自で API キーを用意）。
+.env ファイルは gitignore に記載されているので、リポジトリに反映されないようにしてある。
+
+### OpenAI API キー取得
+
+参考記事：https://qiita.com/kurata04/items/a10bdc44cc0d1e62dad3  
+API を利用するためにはクレジットを購入する必要がある。初期段階ではコストはほとんどかからない想定なので、5 ドル分購入しておけば良いと思う。  
+クレジット購入から API を利用できるまでラグがある場合がある（1 週間程度かかることも）
 
 ## フロントエンドのライブラリ管理
 

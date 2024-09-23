@@ -17,5 +17,7 @@
    - リポジトリ：https://github.com/shimpei1494/chat-agent-practice
    - プルリク作成時に Linter が走るので、そこでエラーや警告が出た場合は再度ローカルで確認し、修正&push してエラーがない状態にする（下図がエラーがない状態）
      <img width="925" alt="スクリーンショット 2024-09-16 17 42 37" src="https://github.com/user-attachments/assets/3fdcae3a-287f-475e-8f5f-d8ab0208eb28">
+   - Files changed（プルリクでの develop との差分）を確認し、不要な内容がコミットされていないかを確認
    - プルリク確認依頼を出す
+   - プルリクに対して、指摘コメントがあれば適宜修正&push
    - プルリクが承認され、マージされたら完了
