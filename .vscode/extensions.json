@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "charliermarsh.ruff",
+    "usernamehw.errorlens",
+    "dsznajder.es7-react-js-snippets",
+    "mhutchie.git-graph",
+    "oderwat.indent-rainbow",
+    "ms-ceintl.vscode-language-pack-ja",
+    "pkief.material-icon-theme",
+    "ms-python.python",
+    "ms-python.debugpy",
+    "mosapride.zenkaku",
+    "streetsidesoftware.code-spell-checker",
+    "ecmel.vscode-html-css",
+    "abusaidm.html-snippets",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag"
+  ]
+}
